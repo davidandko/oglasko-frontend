@@ -1,0 +1,51 @@
+<app-navigation>   </app-navigation>
+<div class="sidebar-container">
+<div class="sidebar-block">
+
+</div>
+</div>
+<!--FILTERS-->
+<div class="filter-container">
+<div class="filter-element">
+    <p>Filters:<p>
+</div>
+<div class="filter-element">
+    <select class="filter-element-select">
+        <option disabled selected value> 
+            -- Select An Option -- 
+        </option>
+        <option id="filterByPriceAsc">
+            Price => Ascending 
+        </option>
+        <option id="filterByPriceDsc">
+            Price => Descending
+        </option>
+        <option id="filterByDateNewest">
+            Date => Newest
+        </option>
+        <option id="filterByDateOldest">
+            Date => Oldest
+        </option>
+    </select>
+</div>
+<div class="filter-element">
+    <p>Category:</p>
+</div>
+<div class="filter-element">  
+    <select class="filter-element-select-category">
+        <option disabled selected value> 
+            -- Select An Option -- 
+        </option>
+        <option value="0" id="vehiclesCategory">
+            Vehicles
+        </option>
+        <option value="1" id="electronicsCategory">
+            Electronics
+        </option>
+        <option value="2" id="furnitureCategory">
+            Guitars
+        </option>
+    </select>
+</div>
+</div>
+<app-listing></app-listing>
