@@ -1,51 +1,51 @@
-<app-navigation>   </app-navigation>
+<app-navigation></app-navigation>
 <div class="sidebar-container">
-<div class="sidebar-block">
+  <div class="sidebar-block"></div>
+</div>
 
-</div>
-</div>
-<!--FILTERS-->
+<!-- FILTERS -->
 <div class="filter-container">
-<div class="filter-element">
-    <p>Filters:<p>
-</div>
-<div class="filter-element">
-    <select class="filter-element-select">
-        <option disabled selected value> 
-            -- Select An Option -- 
-        </option>
-        <option id="filterByPriceAsc">
-            Price => Ascending 
-        </option>
-        <option id="filterByPriceDsc">
-            Price => Descending
-        </option>
-        <option id="filterByDateNewest">
-            Date => Newest
-        </option>
-        <option id="filterByDateOldest">
-            Date => Oldest
-        </option>
+  <div class="filter-element">
+    <input
+      type="text"
+      placeholder="Search"
+      (input)="onSearchChange()"
+      [(ngModel)]="searchQuery"
+    />
+  </div>
+
+  <div class="filter-element">
+    <p>Filters:</p>
+  </div>
+  <div class="filter-element">
+    <select
+      class="filter-element-select"
+      (change)="onPriceFilterChange($event)"
+    >
+      <option disabled selected value>-- Select An Option --</option>
+      <option value="priceAsc">Price => Ascending</option>
+      <option value="priceDsc">Price => Descending</option>
+      <option value="dateNewest">Date => Newest</option>
+      <option value="dateOldest">Date => Oldest</option>
     </select>
-</div>
-<div class="filter-element">
+  </div>
+  <div class="filter-element">
     <p>Category:</p>
-</div>
-<div class="filter-element">  
-    <select class="filter-element-select-category">
-        <option disabled selected value> 
-            -- Select An Option -- 
-        </option>
-        <option value="0" id="vehiclesCategory">
-            Vehicles
-        </option>
-        <option value="1" id="electronicsCategory">
-            Electronics
-        </option>
-        <option value="2" id="furnitureCategory">
-            Guitars
-        </option>
+  </div>
+  <div class="filter-element">
+    <select
+      class="filter-element-select-category"
+      (change)="onCategoryChange($event)"
+    >
+      <option disabled selected value>-- Select An Option --</option>
+      <option value="vehicles">Vehicles</option>
+      <option value="electronics">Electronics</option>
+      <option value="furniture">Furniture</option>
     </select>
+  </div>
+  
 </div>
-</div>
-<app-listing></app-listing>
+
+<div class="listing-container" *ngFor="let list of listings">
+    <app-listing [listing]="list"></app-listing>
+  </div>

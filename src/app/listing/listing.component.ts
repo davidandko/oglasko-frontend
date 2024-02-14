@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component,Input } from '@angular/core';
+import { Listing } from '../types/listing.interface';
 @Component({
   selector: 'app-listing',
   standalone: true,
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './listing.component.css'
 })
 export class ListingComponent {
-
+  @Input() 
+  listing!: Listing;
 }
