@@ -1,18 +1,28 @@
-<div class="listing-card">
-    <div class="listing-card-left">
-        <img src="../../assets/media/placeholders/PRS.png">
+
+<div class="listing-container">
+    <div class="listing-img">
+        <img [src]="listing.photos">
+        <span><strong>Date Added: </strong>{{listing.dateAdded}}</span>
+        <span><strong>Added By: </strong>{{listing.owner}}</span>
     </div>
-    <div class="listing-card-center">
+    <div class="listing-card">
         <span><h2>{{listing.title}}</h2></span>
-        <span><strong>Price: </strong>{{listing.price}}</span>
-        <span><strong>Added On:</strong>  {{listing.dateAdded}}</span>
-        
+        <span><strong>Location: </strong>{{listing.mainLocation}} </span>
+        <span><strong>Specific Location: </strong>{{listing.specLocation}} </span>
+        <span><strong>Category: </strong>{{listing.mainCategory}}</span>
+        <span><strong>Subcategory: </strong>{{listing.subCategory}}</span>
+        <span><strong>Mobile: </strong>{{listing.phoneNumber}}</span>
+        <span class="price">{{listing.price}} $</span>
     </div>
-    <div class="listing-card-right">
-        <span><strong>Description:</strong></span>
-        <div>{{listing.description}}</div>
-        <span><button>View Listing</button></span>
-
+    <div class="listing-card">
+        <span><h2>Description:</h2></span>
+        <div class="description"><p>{{listing.description}}</p></div>
     </div>
-
+    <div class="listing-controls">
+        <button class="button-open"><span>Open</span></button>
+        <button *ngIf="route != 'cart'" class="button-add-to-cart" (click)="addToCart(listing)"><span>Add to Cart</span></button>
+        <button *ngIf="route != 'cart'" class="button-buy-now"><span>Buy Now</span></button>
+        <button *ngIf="route == 'cart'" class="button-remove-from-cart" (click)="removeFromCart(listing)"><span>Remove</span></button>
+    </div>
 </div>
+

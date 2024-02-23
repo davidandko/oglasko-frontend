@@ -1,31 +1,37 @@
 <header>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">
-                        <img src="../../assets/media/oglasko-logos/Oglasko-logos_transparent.png">
-            </div>
-            <div class="nav-element">
-                <a routerLink="/home" >
-                        <span>Home</span>
-                </a>
-            </div>
-                
-            <div class="nav-element">
-                <a routerLink="/market">
-                        <span>Market</span>
-                </a>
-            </div>                        
-            <div class="nav-element">
-                <a routerLink="/contact">
-                    
-                    <span>Contact</span>
-                </a>
-            </div>
-            <div class="nav-element">
-                <button id="open-cart-button">
-                    <span>Open Cart</span>
-                </button>
-            </div>
-        </div>    
-    </nav> 
+  <nav>
+    <div class="nav-container">
+
+      <div class="nav-logo">
+        <img
+          src="../../assets/media/oglasko-logos/Oglasko-logos_transparent.png"
+        />
+        <a routerLink="market"></a>
+      </div>
+
+      <div>
+        <a routerLink="/home" class="nav-element">
+          Home
+        </a>
+      </div>
+
+      <div>
+        <a routerLink="/market" class="nav-element">
+          Market
+        </a>
+      </div>
+
+      <div>
+        <a routerLink="/contact" class="nav-element">
+          Contact
+        </a>
+      </div>
+      
+      <div>
+        <a routerLink="/cart" class="nav-element">Open Cart </a>
+        <div class="cart-count" *ngIf="route == 'market'">{{cartCount}}</div>
+      </div>
+      
+    </div>
+  </nav>
 </header>

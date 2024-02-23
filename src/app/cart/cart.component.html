@@ -1,0 +1,20 @@
+<app-navigation [route]="'cart'"></app-navigation>
+<div class="cart-container">
+    <h1> Cart Items</h1>
+    <div class="listings" *ngFor="let item of cartItems">
+        <app-listing [listing]="item" [route]="'cart'"></app-listing>
+    </div>
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-element">
+            
+           Total: {{calculateTotal()}} $
+        </div>
+        <div class="footer-element">
+            <button class="checkout">
+                Checkout
+            </button>
+        </div>
+    </div>
+</footer>

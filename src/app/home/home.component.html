@@ -1,1 +1,9 @@
-<app-navigation></app-navigation>
+<div class="body">
+  <app-navigation [route]="'home'"></app-navigation>
+
+  <div class="content-container">
+    <div *ngFor="let cat of categories" class="categories">
+      {{ cat.title }}
+    </div>
+  </div>
+</div>
